@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte de visite - Florent VIGNAL</title>
+    <title>Carte de visite - Tom Fragrances</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -155,18 +155,18 @@
                 <img src="http://www.image-heberg.fr/files/17419636781464196945.jpg" alt="Logo Comptoir Rhodanien">
             </div>
             <div class="profile-info">
-                <h2>Florent VIGNAL</h2>
-                <p>Chef des Ventes National</p>
-                <p>Comptoir Rhodanien - Jus de Fruit Pauline</p>
-                <p>Téléphone : 07 61 78 53 35</p>
-                <p>Email : f.vignal@comptoir-rhodanien.fr</p>
+                <h2>TomFragrances</h2>
+                <p>@tomfragrances</p>
+                <p>Créateur de contenu</p>
+                <p>Téléphone : 07 61 77 76 69</p>
+                <p>Mail : tom.fragrances99@gmail.com</p>
                 <a href="#" id="download-vcard" class="download-btn">Ajouter à mes contacts</a>
             </div>
         </div>
        
         <div class="contact-form">
-            <h2>Laissez-moi vos coordonnées</h2>
-            <form id="contactForm" action="https://formsubmit.co/f.vignal@comptoir-rhodanien.fr" method="POST">
+            <h2>N'hésitez pas à me contacter !</h2>
+            <form id="contactForm" action="https://formsubmit.co/tom.fragrances99@gmail.com" method="POST">
                 <div class="form-group">
                     <label for="name">Nom et prénom *</label>
                     <input type="text" id="name" name="name" required>
@@ -216,13 +216,13 @@
             const vCardContent = `BEGIN:VCARD
 VERSION:3.0
 PRODID:-//Apple Inc.//iPhone OS 16.5.1//EN
-N:VIGNAL;Florent;;;
-FN:Florent VIGNAL
-ORG:Comptoir Rhodanien - Jus de Fruit Pauline;
-TITLE:Chef des Ventes National
-EMAIL;type=INTERNET;type=WORK;type=pref:f.vignal@comptoir-rhodanien.fr
-TEL;type=CELL;type=VOICE;type=pref:+33 7 61 78 53 35
-item1.URL;type=pref:https://www.pauline-comptoir-rhodanien.com/
+N:Fragrances;Tom;;;
+FN:TomFragrances
+ORG:@tomfragrances;
+TITLE:Créateur de contenu
+EMAIL;type=INTERNET;type=WORK;type=pref:tom.fragrances99@gmail.com
+TEL;type=CELL;type=VOICE;type=pref:+33 7 61 77 76 69
+item1.URL;type=pref:https://www.instagram.com/tomfragrances/
 item1.X-ABLabel:_$!<HomePage>!$_
 END:VCARD`;
            
@@ -232,7 +232,7 @@ END:VCARD`;
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = url;
-            a.download = 'Florent_VIGNAL.vcf';
+            a.download = 'Tom_Fragrances.vcf';
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
