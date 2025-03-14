@@ -1,1 +1,263 @@
-
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de visite - Florent VIGNAL</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+       
+       .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+       
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 30px;
+        }
+       
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+       
+       .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+       
+       .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #888;
+        }
+       
+       .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+       
+       .profile-info h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+       
+       .profile-info p {
+            text-align: center;
+            margin: 5px 0;
+        }
+       
+       .download-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+       
+       .download-btn:hover {
+            background-color: #2980b9;
+        }
+       
+       .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+       
+       .form-group {
+            margin-bottom: 15px;
+        }
+       
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+       
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+       
+        button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+       
+        button:hover {
+            background-color: #1a2530;
+        }
+       
+       .success-message {
+            display: none;
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mes informations</h1>
+        </header>
+       
+        <div class="profile">
+            <div class="profile-image">
+                <img src="http://www.image-heberg.fr/files/17419636781464196945.jpg" alt="Logo Comptoir Rhodanien">
+            </div>
+            <div class="profile-info">
+                <h2>Florent VIGNAL</h2>
+                <p>Chef des Ventes National</p>
+                <p>Comptoir Rhodanien - Jus de Fruit Pauline</p>
+                <p>Téléphone : 07 61 78 53 35</p>
+                <p>Email : f.vignal@comptoir-rhodanien.fr</p>
+                <a href="#" id="download-vcard" class="download-btn">Ajouter à mes contacts</a>
+            </div>
+        </div>
+       
+        <div class="contact-form">
+            <h2>Laissez-moi vos coordonnées</h2>
+            <form id="contactForm" action="https://formsubmit.co/f.vignal@comptoir-rhodanien.fr" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom et prénom *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+               
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+               
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+               
+                <div class="form-group">
+                    <label for="company">Entreprise / Organisation</label>
+                    <input type="text" id="company" name="company">
+                </div>
+               
+                <div class="form-group">
+                    <label for="message">Message (facultatif)</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+               
+                <!-- Champs de configuration FormSubmit -->
+                <input type="hidden" name="_subject" value="Nouveau contact depuis votre carte de visite numérique">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+               
+                <button type="submit">Envoyer</button>
+            </form>
+           
+            <div class="success-message" id="successMessage">
+                Merci pour vos coordonnées! Je vous contacterai très bientôt.
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        // Gestion du téléchargement de la vCard
+        document.getElementById('download-vcard').addEventListener('click', function(e) {
+            e.preventDefault();
+           
+            // Créer le contenu de la vCard avec le lien Linktree ajouté
+            const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//iPhone OS 16.5.1//EN
+N:VIGNAL;Florent;;;
+FN:Florent VIGNAL
+ORG:Comptoir Rhodanien - Jus de Fruit Pauline;
+TITLE:Chef des Ventes National
+EMAIL;type=INTERNET;type=WORK;type=pref:f.vignal@comptoir-rhodanien.fr
+TEL;type=CELL;type=VOICE;type=pref:+33 7 61 78 53 35
+item1.URL;type=pref:https://www.pauline-comptoir-rhodanien.com/
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD`;
+           
+            // Créer un blob et un lien pour télécharger le fichier
+            const blob = new Blob([vCardContent], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'Florent_VIGNAL.vcf';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        });
+       
+        // Modification du gestionnaire d'événements pour le formulaire
+        // Le formulaire est maintenant géré par FormSubmit, mais nous gardons
+        // le code pour afficher le message de succès en cas de besoin
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Ne pas empêcher la soumission du formulaire
+            // FormSubmit prendra en charge l'envoi
+           
+            // Si vous voulez toujours afficher le message de succès localement,
+            // vous pouvez décommenter ces lignes et ajouter un champ _next à FormSubmit
+            /*
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+               
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }, 500);
+            */
+        });
+    </script>
+</body>
+</html>
